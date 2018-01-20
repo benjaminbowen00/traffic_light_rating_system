@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TrafficLightRating</string>
+    <string name="menu_item_results">See results</string>
+</resources>
