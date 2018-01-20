@@ -85,6 +85,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
+        if(item.getItemId() == R.id.menu_item_reset){
+            Intent intent = new Intent (this, ResetActivity.class);
+            startActivity(intent);
+        }
+
 
 
 

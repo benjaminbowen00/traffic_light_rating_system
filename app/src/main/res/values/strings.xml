@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">TrafficLightRating</string>
+    <string name="app_name">Traffic Light Rating System</string>
     <string name="menu_item_results">See results</string>
+    <string name="reset_data">Reset data</string>
 </resources>

@@ -17,6 +17,9 @@ public interface RatingDao {
     @Query("SELECT count(*) FROM ratings WHERE score = :score;")
     int getFrequencyOfScore(int score);
 
+    @Query("DELETE FROM ratings")
+    void resetData();
+
 
 
 
