@@ -42,9 +42,9 @@ public class ResultsActivity extends AppCompatActivity {
         meanScoreText = findViewById(R.id.average_text);
 
         labels = new ArrayList<>();
-        labels.add("1");
-        labels.add("2");
-        labels.add("3");
+        labels.add("Sad");
+        labels.add("OK");
+        labels.add("Happy");
 
         values = new ArrayList<>();
         for(int i=1; i <=3; i++){
@@ -57,13 +57,15 @@ public class ResultsActivity extends AppCompatActivity {
         barDataSet.setColors(new int[] {Color.RED, Color.YELLOW, Color.GREEN});
         barChart.getLegend().setEnabled(false);
         barChart.setDescription("");
+        barDataSet.setDrawValues(false);
 
         data = new BarData(labels, barDataSet);
         barChart.setData(data);
 
+
         float meanScore = getAverage();
 
-        meanScoreText.setText("The average score is "+meanScore);
+        meanScoreText.setText("The average score is "+String.format("%.2f", meanScore)+"\n (sad = 1, OK = 2, happy = 3)");
 
 
 
