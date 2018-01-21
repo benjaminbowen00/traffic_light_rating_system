@@ -18,12 +18,16 @@ public class Rating {
     @ColumnInfo(name = "score")
     private int score;
 
-    @ColumnInfo(name = "date_time")
-    private String dateTime;
+    @ColumnInfo(name = "date")
+    private String date;
 
-    public Rating(int score, String dateTime){
+    @ColumnInfo(name = "time")
+    private String time;
+
+    public Rating(int score, String date, String time){
         this.score = score;
-        this.dateTime = dateTime;
+        this.date = date;
+        this.time = time;
     }
 
     public int getId() {
@@ -34,8 +38,20 @@ public class Rating {
         return score;
     }
 
-    public String getDateTime() {
-        return dateTime;
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public void setId(int id) {
@@ -46,7 +62,5 @@ public class Rating {
         this.score = score;
     }
 
-    public void setDateTime(String dateTime) {
-        this.dateTime = dateTime;
-    }
+
 }

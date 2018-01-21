@@ -67,12 +67,6 @@ public class ResultsActivity extends AppCompatActivity {
 
         meanScoreText.setText("The average score is "+String.format("%.2f", meanScore)+"\n (sad = 1, OK = 2, happy = 3)");
 
-
-
-
-
-
-
     }
 
 

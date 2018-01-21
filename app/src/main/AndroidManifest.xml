@@ -21,8 +21,11 @@
         <activity
             android:name=".ResultsActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".ResetActivity"
-            android:parentActivityName=".MainActivity" ></activity>
+        <activity
+            android:name=".ResetActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ResultsByTImeActivity"
+            android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>

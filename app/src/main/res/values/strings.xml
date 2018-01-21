@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Traffic Light Rating System</string>
     <string name="menu_item_results">See results</string>
+    <string name="menu_item_results_by_time">Morning/Afternoon results</string>
     <string name="reset_data">Reset data</string>
+    <string name="morning">Morning</string>
+    <string name="afternoon">Afternoon</string>
+    <string name="question">How do you feel about coding right now?</string>
 </resources>

@@ -20,6 +20,12 @@ public interface RatingDao {
     @Query("DELETE FROM ratings")
     void resetData();
 
+    @Query("SELECT count(*) FROM ratings WHERE time < '12:00' AND score = :score;")
+    int getMorningFrequencyOfScore(int score);
+
+    @Query("SELECT count(*) FROM ratings WHERE time >= '12:00' AND score = :score;")
+    int getAfternoonFrequencyOfScore(int score);
+
 
 
 

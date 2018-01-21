@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     ImageButton happyButton;
     ImageButton okButton;
     ImageButton sadButton;
-    int score;
     AppDatabase db;
 
     @Override
@@ -52,20 +51,34 @@ public class MainActivity extends AppCompatActivity {
         return 2;
     }
 
+    public String getFeelingString(View view){
+        switch(view.getId()){
+            case R.id.happy_button:
+                return "happy";
+            case R.id.ok_button:
+                return "OK";
+            case R.id.sad_button:
+                return  "sad";
+        }
+        return "OK";
+    }
+
     public void onButtonClicked(View view){
 
         int score = getCorrectScore(view);
 
         Date date = new Date();
-        SimpleDateFormat yMDTimeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        String dateAsString = yMDTimeFormat.format(date);
+        SimpleDateFormat yMDFormat = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat hhmmFormat = new SimpleDateFormat("HH:mm");
+        String dateAsString = yMDFormat.format(date);
+        String timeAsString = hhmmFormat.format(date);
 
 
-        Rating rating = new Rating(score, dateAsString);
+        Rating rating = new Rating(score, dateAsString, timeAsString);
 
         db.ratingDao().insertAll(rating);
 
-        Toast.makeText(this, "Rating of "+ score +" saved.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Rating of '"+ getFeelingString(view) +"' saved.", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -87,6 +100,11 @@ public class MainActivity extends AppCompatActivity {
 
         if(item.getItemId() == R.id.menu_item_reset){
             Intent intent = new Intent (this, ResetActivity.class);
+            startActivity(intent);
+        }
+
+        if(item.getItemId() == R.id.menu_item_result_by_time){
+            Intent intent = new Intent (this, ResultsByTImeActivity.class);
             startActivity(intent);
         }
 
